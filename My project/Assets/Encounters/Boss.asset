@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1f5987bad318034f94c2769ed91c89d, type: 3}
-  m_Name: Slime3
+  m_Name: Boss
   m_EditorClassIdentifier: 
-  health: 3
-  rockChance: 40
-  paperChance: 10
-  scissorsChance: 50
+  health: 5
+  rockChance: 33.3
+  paperChance: 33.3
+  scissorsChance: 33.3
   atkChance: 100
-  gold: 3
+  gold: 20
   enemy: {fileID: 0}
   enemyAnim: {fileID: 0}
