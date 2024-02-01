@@ -47,3 +47,6 @@ TagManager:
   - name: Player
     uniqueID: 491151531
     locked: 0
+  - name: Fights
+    uniqueID: 3692967613
+    locked: 0

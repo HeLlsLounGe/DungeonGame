@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ee3e660bd13a47a4b8f117deaa350522
+guid: cd41d85bcd10f9143ab4d2664ac27699
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Were-Rat_0
+      name: Bat_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cd2a7a5789de3247a4e48b83e54f52a
-      internalID: 1269319210
+      spriteID: d53c894838d62694c902c5aa8209db56
+      internalID: 285707070
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Were-Rat_1
+      name: Bat_1
       rect:
         serializedVersion: 2
         x: 64
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bcf214794841e8e4a8b608c73ac42d43
-      internalID: -18282718
+      spriteID: 216f2dd2d88d31e4db683bd45dd4c290
+      internalID: -1158633829
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Were-Rat_2
+      name: Bat_2
       rect:
         serializedVersion: 2
         x: 0
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e93359321614c5b4482886f37a38d4d8
-      internalID: -499720172
+      spriteID: 98391f4752bc6934f88ed018e89222e4
+      internalID: -2108271843
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Were-Rat_3
+      name: Bat_3
       rect:
         serializedVersion: 2
         x: 64
@@ -200,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 293392501659774439e9ae114dfee74f
-      internalID: 494700344
+      spriteID: f5d7834d9495ed442a70ed88813d2ec6
+      internalID: -1523979992
       vertices: []
       indices: 
       edges: []
@@ -217,10 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Were-Rat_0: 1269319210
-      Were-Rat_1: -18282718
-      Were-Rat_2: -499720172
-      Were-Rat_3: 494700344
+      Bat_0: 285707070
+      Bat_1: -1158633829
+      Bat_2: -2108271843
+      Bat_3: -1523979992
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
