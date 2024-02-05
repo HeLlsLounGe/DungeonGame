@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1f5987bad318034f94c2769ed91c89d, type: 3}
-  m_Name: Slime1
+  m_Name: 1Slime
   m_EditorClassIdentifier: 
   health: 1
   rockChance: 0
