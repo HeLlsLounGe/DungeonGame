@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8337dff995cdafa45970f6bb2a259a92
+guid: e1d992a426ff93243b273cdf8386c331
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: demonBat_0
+      name: Scawy Rat_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
-        width: 96
-        height: 96
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25923468299e48a4dbfc50fa403d9029
-      internalID: 939039525
+      spriteID: 3a126512b4f2bce409aae4798b65ad26
+      internalID: -797780828
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demonBat_1
+      name: Scawy Rat_1
       rect:
         serializedVersion: 2
-        x: 96
-        y: 96
-        width: 96
-        height: 96
+        x: 64
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,104 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 130691e9f80c47f4b947b067cb285866
-      internalID: -1135874527
+      spriteID: 3c672f2f8a1e98c42b0a332f5dea8e20
+      internalID: 1473821352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demonBat_2
+      name: Scawy Rat_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 458781df835ac6a41bc53328c24655bd
+      internalID: -1220800651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scawy Rat_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c669b90379f31a44a80ad3ce38875ce8
+      internalID: 1282601378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scawy Rat_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fb27c4fb9233894f971e35b614ef82d
+      internalID: -1214607757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scawy Rat_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dbb580fc9dff214ba36bac246f5726d
+      internalID: 1366875966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scawy Rat_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 96
-        height: 96
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca55a39183b1a5349910ef41bdf734b8
-      internalID: -2033086190
+      spriteID: 1157e1140f288894caf1fc3de34ff9fd
+      internalID: -342156001
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demonBat_3
+      name: Scawy Rat_7
       rect:
         serializedVersion: 2
-        x: 96
+        x: 64
         y: 0
-        width: 96
-        height: 96
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,8 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8f0bb8244d9b51469dd708833f654fa
-      internalID: 752015007
+      spriteID: 2aee8a6893f5820418e4cf9ce99b871d
+      internalID: 1814423408
       vertices: []
       indices: 
       edges: []
@@ -217,10 +301,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      demonBat_0: 939039525
-      demonBat_1: -1135874527
-      demonBat_2: -2033086190
-      demonBat_3: 752015007
+      Scawy Rat_0: -797780828
+      Scawy Rat_1: 1473821352
+      Scawy Rat_2: -1220800651
+      Scawy Rat_3: 1282601378
+      Scawy Rat_4: -1214607757
+      Scawy Rat_5: 1366875966
+      Scawy Rat_6: -342156001
+      Scawy Rat_7: 1814423408
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

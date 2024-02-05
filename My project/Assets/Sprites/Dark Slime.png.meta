@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8337dff995cdafa45970f6bb2a259a92
+guid: 5b6bc2f4ca865b642abb4ee355a9fd85
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: demonBat_0
+      name: Dark Slime_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
-        width: 96
-        height: 96
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25923468299e48a4dbfc50fa403d9029
-      internalID: 939039525
+      spriteID: 4bb401f1ea242b043bfa622b536dbe4c
+      internalID: 356648264
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demonBat_1
+      name: Dark Slime_1
       rect:
         serializedVersion: 2
-        x: 96
-        y: 96
-        width: 96
-        height: 96
+        x: 64
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 130691e9f80c47f4b947b067cb285866
-      internalID: -1135874527
+      spriteID: e1c18973776664048870baa085b41dca
+      internalID: -1298683031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demonBat_2
+      name: Dark Slime_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 96
-        height: 96
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca55a39183b1a5349910ef41bdf734b8
-      internalID: -2033086190
+      spriteID: 1831bd32d57cd7c4ab7f9b0cd996463a
+      internalID: -1784846529
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demonBat_3
+      name: Dark Slime_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 64
         y: 0
-        width: 96
-        height: 96
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8f0bb8244d9b51469dd708833f654fa
-      internalID: 752015007
+      spriteID: 1cccb99b04618a74ca05a951c4be8f98
+      internalID: 662212621
       vertices: []
       indices: 
       edges: []
@@ -217,10 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      demonBat_0: 939039525
-      demonBat_1: -1135874527
-      demonBat_2: -2033086190
-      demonBat_3: 752015007
+      Dark Slime_0: 356648264
+      Dark Slime_1: -1298683031
+      Dark Slime_2: -1784846529
+      Dark Slime_3: 662212621
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

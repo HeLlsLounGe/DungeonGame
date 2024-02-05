@@ -18,5 +18,5 @@ MonoBehaviour:
   scissorsChance: 50
   atkChance: 100
   gold: 3
-  enemy: {fileID: 0}
+  enemy: {fileID: 356648264, guid: 5b6bc2f4ca865b642abb4ee355a9fd85, type: 3}
   enemyAnim: {fileID: 0}
