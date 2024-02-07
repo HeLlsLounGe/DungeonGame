@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1f5987bad318034f94c2769ed91c89d, type: 3}
-  m_Name: Boss
+  m_Name: Z 1Bat
   m_EditorClassIdentifier: 
-  health: 5
-  rockChance: 33.3
-  paperChance: 33.3
-  scissorsChance: 33.3
-  atkChance: 100
-  gold: 20
-  enemy: {fileID: 0}
+  health: 3
+  rockChance: 20
+  paperChance: 75
+  scissorsChance: 5
+  atkChance: 90
+  gold: 1
+  enemy: {fileID: 285707070, guid: cd41d85bcd10f9143ab4d2664ac27699, type: 3}
   enemyAnim: {fileID: 0}

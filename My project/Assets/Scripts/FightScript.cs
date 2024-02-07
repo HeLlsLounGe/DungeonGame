@@ -27,6 +27,8 @@ public class FightScript : MonoBehaviour
     [SerializeField] Canvas fightCanv;
     EncounterCont currentEncounter;
 
+    [SerializeField] AudioClip click;
+
     public float playerChoice = 0;
     public float botChoice = 0;
     public bool EnemyChoosing = false;
@@ -37,7 +39,7 @@ public class FightScript : MonoBehaviour
         if (healthAmt <= 0)
         {
             moveEnabled = true;
-            fightCanv.gameObject.SetActive(false);
+            fightCanv.enabled = false;
             playerHealth = playerMax;
         }if (playerHealth <= 0)
         {
@@ -55,6 +57,7 @@ public class FightScript : MonoBehaviour
             ContButton.gameObject.SetActive(true);
             Debug.Log("Rock");
         }
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(click);
     }
     public void Paper()
     {
@@ -64,6 +67,7 @@ public class FightScript : MonoBehaviour
             ContButton.gameObject.SetActive(true);
             Debug.Log("Paper");
         }
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(click);
     }
     public void Scissors()
     {
@@ -73,9 +77,11 @@ public class FightScript : MonoBehaviour
             ContButton.gameObject.SetActive(true);
             Debug.Log("Scissors");
         }
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(click);
     }
     public void EnemyChoose()
     {
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(click);
         EnemyChoosing = true;
         ContButton.gameObject.SetActive(false);
         int i = Random.Range(0, 100);

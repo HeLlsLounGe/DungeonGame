@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1f5987bad318034f94c2769ed91c89d, type: 3}
-  m_Name: 3Rat
+  m_Name: Med 3Rat
   m_EditorClassIdentifier: 
-  health: 3
-  rockChance: 50
+  health: 4
+  rockChance: 40
   paperChance: 40
-  scissorsChance: 10
+  scissorsChance: 20
   atkChance: 100
   gold: 3
   enemy: {fileID: -797780828, guid: e1d992a426ff93243b273cdf8386c331, type: 3}

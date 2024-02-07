@@ -45,6 +45,9 @@ TagManager:
   - name: Ground
     uniqueID: 2779908519
     locked: 0
+  - name: SpecialTiles
+    uniqueID: 2522032113
+    locked: 0
   - name: Player
     uniqueID: 491151531
     locked: 0
@@ -53,4 +56,7 @@ TagManager:
     locked: 0
   - name: MovementUI
     uniqueID: 2006637431
+    locked: 0
+  - name: PauseUI
+    uniqueID: 3489661057
     locked: 0

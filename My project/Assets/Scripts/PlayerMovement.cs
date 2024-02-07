@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,22 +17,34 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] bool mobileUI = false;
     [SerializeField] Canvas mobileCanvas;
     [SerializeField] Canvas pauseCanvas;
+    [SerializeField] Canvas opt;
+    [SerializeField] Canvas warning;
     [SerializeField] float moveDelay = 2f;
+
+    [SerializeField] AudioClip click;
     float timer = 0f;
     public Transform movePoint;
     public LayerMask whatStopsMovement;
     bool moveAllow = true;
     bool moving = false;
+    bool paused = false;
     void Start()
     {
         movePoint.parent = null;
+        if (mobileUI)
+        {
+            mobileCanvas.enabled = true;
+        }else
+        {
+            mobileCanvas.enabled = false;
+        }
     }
 
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
 
-        if (!mobileUI && moveAllow)
+        if (!mobileUI && moveAllow && !paused)
         {
             if (Vector3.Distance(transform.position, movePoint.position) <= .1f)
             {
@@ -53,14 +66,17 @@ public class PlayerMovement : MonoBehaviour
         }
 
         moveAllow = FindObjectOfType<FightScript>().moveEnabled;
-        if (moveAllow)
+        if (mobileUI)
         {
-            mobileCanvas.enabled = true;
-            Debug.Log("moveEnabled");
-        }
-        else if (!moveAllow)
-        {
-            mobileCanvas.enabled = false;
+            if (moveAllow)
+            {
+                mobileCanvas.enabled = true;
+                Debug.Log("moveEnabled");
+            }
+            else if (!moveAllow)
+            {
+                mobileCanvas.enabled = false;
+            }
         }
 
         if (Input.GetKeyDown("escape"))
@@ -77,11 +93,10 @@ public class PlayerMovement : MonoBehaviour
                 moving = false;
             }
         }
-        Debug.Log(moveAllow);
     }
     public void Up()
     {
-        if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, 1f, 0f), .5f, whatStopsMovement) && !moving)
+        if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, 1f, 0f), .5f, whatStopsMovement) && !moving && !paused)
         {
             moving = true;
             movePoint.position += new Vector3(0f, upDist, 0f);
@@ -89,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Down()
     {
-        if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, -1f, 0f), .5f, whatStopsMovement) && !moving)
+        if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, -1f, 0f), .5f, whatStopsMovement) && !moving && !paused)
         {
             moving = true;
             movePoint.position += new Vector3(0f, downDist, 0f);
@@ -97,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Left()
     {
-        if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(-1f, 0f, 0f), .5f, whatStopsMovement) && !moving)
+        if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(-1f, 0f, 0f), .5f, whatStopsMovement) && !moving && !paused)
         {
             moving = true;
             movePoint.position += new Vector3(leftDist, 0f, 0f);
@@ -105,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Right()
     {
-        if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(1f, 0f, 0f), .5f, whatStopsMovement) && !moving)
+        if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(1f, 0f, 0f), .5f, whatStopsMovement) && !moving && !paused)
         {
             moving = true;
             movePoint.position += new Vector3(rightDist, 0f, 0f);
@@ -113,7 +128,33 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Pause()
     {
-        pauseCanvas.gameObject.SetActive(true);
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(click);
+        pauseCanvas.enabled = true;
         Time.timeScale = 0;
+        paused = true;
+    }
+    public void Resume()
+    {
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(click);
+        pauseCanvas.enabled = false;
+        warning.enabled = false;
+        opt.enabled = false;
+        Time.timeScale = 1;
+        paused = false;
+    }
+    public void Options()
+    {
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(click);
+        opt.enabled = true;
+    }
+    public void QuitButton()
+    {
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(click);
+        warning.enabled = true;
+    }
+    public void Quit()
+    {
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(click);
+        SceneManager.LoadScene("MainMenu");
     }
 }
