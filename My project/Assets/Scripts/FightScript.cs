@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class FightScript : MonoBehaviour
 {
@@ -29,19 +30,21 @@ public class FightScript : MonoBehaviour
     public float playerChoice = 0;
     public float botChoice = 0;
     public bool EnemyChoosing = false;
+    public bool moveEnabled = true;
 
     void Update()
     {
         if (healthAmt <= 0)
         {
+            moveEnabled = true;
             fightCanv.gameObject.SetActive(false);
             playerHealth = playerMax;
+        }if (playerHealth <= 0)
+        {
+            SceneManager.LoadScene("Death");
         }
         healthText.text = healthAmt.ToString();
         playerHealthTXT.text = playerHealth.ToString();
-        Debug.Log(healthAmt);
-        //enemyImage = GetComponent<Image>();
-        Debug.Log(enemyImage.sprite);
         enemyImage.sprite = enemy;
     }
     public void Rock()
@@ -156,6 +159,7 @@ public class FightScript : MonoBehaviour
     }
     public void loadEncounter()
     {
+        moveEnabled = false;
         currentEncounter = encounters[FindObjectOfType<RandomEvent>().encounterNum];
         healthAmt = currentEncounter.health;
         rock = currentEncounter.rockChance;
