@@ -21,15 +21,21 @@ public class FightScript : MonoBehaviour
 
     [SerializeField] public Sprite enemy;
     [SerializeField] Image enemyImage;
-    [SerializeField] public Animator enemyAnimator;
+    Animator anim;
+    [SerializeField] public RuntimeAnimatorController enemyAnimator;
     [SerializeField] public GameObject ContButton;
     [SerializeField] List<EncounterCont> encounters;
     [SerializeField] Canvas fightCanv;
     EncounterCont currentEncounter;
 
     [SerializeField] AudioClip click;
+    [SerializeField] AudioClip playerHit;
+    [SerializeField] AudioClip enemyHit;
+    [SerializeField] AudioClip Clash;
+    [SerializeField] AudioClip enemyDeath;
 
     public float playerChoice = 0;
+    float counter = 1;
     public float botChoice = 0;
     public bool EnemyChoosing = false;
     public bool moveEnabled = true;
@@ -38,16 +44,28 @@ public class FightScript : MonoBehaviour
     {
         if (healthAmt <= 0)
         {
-            moveEnabled = true;
-            fightCanv.enabled = false;
-            playerHealth = playerMax;
-        }if (playerHealth <= 0)
+            if (counter < 1)
+            {
+                moveEnabled = true;
+                fightCanv.enabled = false;
+                playerHealth = playerMax;
+                Camera.main.GetComponent<AudioSource>().PlayOneShot(enemyDeath);
+                counter++;
+            }
+        }
+        if (playerHealth <= 0)
         {
             SceneManager.LoadScene("Death");
         }
         healthText.text = healthAmt.ToString();
         playerHealthTXT.text = playerHealth.ToString();
         enemyImage.sprite = enemy;
+        anim = enemyImage.gameObject.GetComponent<Animator>();
+
+        if (anim.runtimeAnimatorController != enemyAnimator)
+        {
+            anim.runtimeAnimatorController = enemyAnimator;
+        }
     }
     public void Rock()
     {
@@ -120,14 +138,21 @@ public class FightScript : MonoBehaviour
             if (botChoice == 1)
             {
                 playerHealth--;
+                Camera.main.GetComponent<AudioSource>().PlayOneShot(playerHit);
             }
-            if (botChoice == 2)
+            else if (botChoice == 2)
             {
                 healthAmt--;
+                Camera.main.GetComponent<AudioSource>().PlayOneShot(enemyHit);
             }
-            if (botChoice == 4)
+            else if (botChoice == 4)
             {
                 healthAmt--;
+                Camera.main.GetComponent<AudioSource>().PlayOneShot(enemyHit);
+            }
+            else
+            {
+                Camera.main.GetComponent<AudioSource>().PlayOneShot(Clash);
             }
         }
         if (playerChoice == 1)
@@ -135,14 +160,21 @@ public class FightScript : MonoBehaviour
             if (botChoice == 0)
             {
                 healthAmt--;
+                Camera.main.GetComponent<AudioSource>().PlayOneShot(enemyHit);
             }
-            if (botChoice == 2)
+            else if (botChoice == 2)
             {
                 playerHealth--;
+                Camera.main.GetComponent<AudioSource>().PlayOneShot(playerHit);
             }
-            if (botChoice == 4)
+            else if (botChoice == 4)
             {
                 healthAmt--;
+                Camera.main.GetComponent<AudioSource>().PlayOneShot(enemyHit);
+            }
+            else
+            {
+                Camera.main.GetComponent<AudioSource>().PlayOneShot(Clash);
             }
         }
         if (playerChoice == 2)
@@ -150,14 +182,21 @@ public class FightScript : MonoBehaviour
             if (botChoice == 0)
             {
                 playerHealth--;
+                Camera.main.GetComponent<AudioSource>().PlayOneShot(playerHit);
             }
-            if (botChoice == 1)
+            else if (botChoice == 1)
             {
                 healthAmt--;
+                Camera.main.GetComponent<AudioSource>().PlayOneShot(enemyHit);
             }
-            if (botChoice == 4)
+            else if (botChoice == 4)
             {
                 healthAmt--;
+                Camera.main.GetComponent<AudioSource>().PlayOneShot(enemyHit);
+            }
+            else
+            {
+                Camera.main.GetComponent<AudioSource>().PlayOneShot(Clash);
             }
         }
         ContButton.gameObject.SetActive(false);
@@ -165,6 +204,7 @@ public class FightScript : MonoBehaviour
     }
     public void loadEncounter()
     {
+        counter--;
         moveEnabled = false;
         currentEncounter = encounters[FindObjectOfType<RandomEvent>().encounterNum];
         healthAmt = currentEncounter.health;

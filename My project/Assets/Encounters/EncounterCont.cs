@@ -12,7 +12,7 @@ public class EncounterCont : ScriptableObject
     [SerializeField] public float atkChance;
     [SerializeField] public float gold;
     [SerializeField] public Sprite enemy;
-    [SerializeField] public Animator enemyAnim;
+    [SerializeField] public RuntimeAnimatorController enemyAnim;
 
     public float Health(float index)
     {

@@ -8,18 +8,18 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public float moveSpeed = 5f;
     [SerializeField] float vertDist = 2f;
     [SerializeField] float horDist = 2f;
-
     [SerializeField] float upDist = 2f;
     [SerializeField] float downDist = -2f;
     [SerializeField] float leftDist = -2f;
     [SerializeField] float rightDist = 2f;
+    [SerializeField] float moveDelay = 2f;
 
     [SerializeField] bool mobileUI = false;
     [SerializeField] Canvas mobileCanvas;
     [SerializeField] Canvas pauseCanvas;
     [SerializeField] Canvas opt;
     [SerializeField] Canvas warning;
-    [SerializeField] float moveDelay = 2f;
+    Animator MyAnimator;
 
     [SerializeField] AudioClip click;
     float timer = 0f;
@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
         {
             mobileCanvas.enabled = false;
         }
+        MyAnimator = GetComponent<Animator>();
     }
 
     void Update()
@@ -53,6 +54,14 @@ public class PlayerMovement : MonoBehaviour
                     if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), .5f, whatStopsMovement))
                     {
                         movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal") * horDist, 0f, 0f);
+                        if(Input.GetAxisRaw("Horizontal") == 1)
+                        {
+                            MyAnimator.SetTrigger("MoveRight");
+                        }
+                        else if (Input.GetAxisRaw("Horizontal") == -1)
+                        {
+                            MyAnimator.SetTrigger("MoveLeft");
+                        }
                     }
                 }
                 else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1)
@@ -60,6 +69,14 @@ public class PlayerMovement : MonoBehaviour
                     if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f), .5f, whatStopsMovement))
                     {
                         movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical") * vertDist, 0f);
+                        if (Input.GetAxisRaw("Vertical") == 1)
+                        {
+                            MyAnimator.SetTrigger("MoveUp");
+                        }
+                        else if (Input.GetAxisRaw("Vertical") == -1)
+                        {
+                            MyAnimator.SetTrigger("MoveDown");
+                        }
                     }
                 }
             }
@@ -96,34 +113,42 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Up()
     {
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(click);
         if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, 1f, 0f), .5f, whatStopsMovement) && !moving && !paused)
         {
             moving = true;
             movePoint.position += new Vector3(0f, upDist, 0f);
+            MyAnimator.SetTrigger("MoveUp");
         }
     }
     public void Down()
     {
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(click);
         if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, -1f, 0f), .5f, whatStopsMovement) && !moving && !paused)
         {
             moving = true;
             movePoint.position += new Vector3(0f, downDist, 0f);
+            MyAnimator.SetTrigger("MoveDown");
         }
     }
     public void Left()
     {
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(click);
         if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(-1f, 0f, 0f), .5f, whatStopsMovement) && !moving && !paused)
         {
             moving = true;
             movePoint.position += new Vector3(leftDist, 0f, 0f);
+            MyAnimator.SetTrigger("MoveLeft");
         }
     }
     public void Right()
     {
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(click);
         if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(1f, 0f, 0f), .5f, whatStopsMovement) && !moving && !paused)
         {
             moving = true;
             movePoint.position += new Vector3(rightDist, 0f, 0f);
+            MyAnimator.SetTrigger("MoveRight");
         }
     }
     public void Pause()
