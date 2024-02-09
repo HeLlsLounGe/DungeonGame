@@ -19,4 +19,4 @@ MonoBehaviour:
   atkChance: 90
   gold: 2
   enemy: {fileID: 1269319210, guid: ee3e660bd13a47a4b8f117deaa350522, type: 3}
-  enemyAnim: {fileID: 0}
+  enemyAnim: {fileID: 9100000, guid: 7499111b9cbef784c823af44cba1fc8c, type: 2}
