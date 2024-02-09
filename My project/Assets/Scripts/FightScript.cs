@@ -22,10 +22,12 @@ public class FightScript : MonoBehaviour
     [SerializeField] public Sprite enemy;
     [SerializeField] Image enemyImage;
     Animator anim;
+    SpriteRenderer sprite;
     [SerializeField] public RuntimeAnimatorController enemyAnimator;
     [SerializeField] public GameObject ContButton;
     [SerializeField] List<EncounterCont> encounters;
     [SerializeField] Canvas fightCanv;
+    [SerializeField] Canvas fightBg;
     EncounterCont currentEncounter;
 
     [SerializeField] AudioClip click;
@@ -48,6 +50,8 @@ public class FightScript : MonoBehaviour
             {
                 moveEnabled = true;
                 fightCanv.enabled = false;
+                fightBg.enabled = false;
+                sprite.enabled = false;
                 playerHealth = playerMax;
                 Camera.main.GetComponent<AudioSource>().PlayOneShot(enemyDeath);
                 counter++;
@@ -61,6 +65,7 @@ public class FightScript : MonoBehaviour
         playerHealthTXT.text = playerHealth.ToString();
         enemyImage.sprite = enemy;
         anim = enemyImage.gameObject.GetComponent<Animator>();
+        sprite = enemyImage.gameObject.GetComponent<SpriteRenderer>();
 
         if (anim.runtimeAnimatorController != enemyAnimator)
         {
@@ -206,6 +211,8 @@ public class FightScript : MonoBehaviour
     {
         counter--;
         moveEnabled = false;
+        sprite.enabled = true;
+        fightBg.enabled = true;
         currentEncounter = encounters[FindObjectOfType<RandomEvent>().encounterNum];
         healthAmt = currentEncounter.health;
         rock = currentEncounter.rockChance;

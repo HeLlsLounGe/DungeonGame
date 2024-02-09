@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Trigger
+  - Boss
+  - NextLvl
   layers:
   - Default
   - TransparentFX
