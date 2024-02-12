@@ -41,6 +41,7 @@ public class FightScript : MonoBehaviour
     public float botChoice = 0;
     public bool EnemyChoosing = false;
     public bool moveEnabled = true;
+    public bool bossFight = false;
 
     void Update()
     {
@@ -53,8 +54,14 @@ public class FightScript : MonoBehaviour
                 fightBg.enabled = false;
                 sprite.enabled = false;
                 playerHealth = playerMax;
-                Camera.main.GetComponent<AudioSource>().PlayOneShot(enemyDeath);
                 counter++;
+                if (bossFight)
+                {
+                    SceneManager.LoadScene("Win");
+                }else
+                {
+                    Camera.main.GetComponent<AudioSource>().PlayOneShot(enemyDeath);
+                }
             }
         }
         if (playerHealth <= 0)
@@ -222,5 +229,9 @@ public class FightScript : MonoBehaviour
         goldDrop = currentEncounter.gold;
         enemy = currentEncounter.enemy;
         enemyAnimator = currentEncounter.enemyAnim;
+    }
+    public void fightingBoss()
+    {
+        bossFight = true;
     }
 }

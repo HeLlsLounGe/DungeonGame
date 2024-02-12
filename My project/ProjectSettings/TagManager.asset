@@ -6,7 +6,8 @@ TagManager:
   tags:
   - Trigger
   - Boss
-  - NextLvl
+  - Lv2
+  - Lv3
   layers:
   - Default
   - TransparentFX

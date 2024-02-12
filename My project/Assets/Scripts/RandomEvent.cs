@@ -20,7 +20,7 @@ public class RandomEvent : MonoBehaviour
             {
                 if (Diff == 1)
                 {
-                    if (i >= 50)
+                    if (i >= 75)
                     {
                         if (currLvl == 1)
                         {
@@ -51,7 +51,7 @@ public class RandomEvent : MonoBehaviour
                 }
                 else if (Diff == 2)
                 {
-                    if (i >= 75)
+                    if (i >= 90)
                     {
                         if (currLvl == 1)
                         {
@@ -114,9 +114,48 @@ public class RandomEvent : MonoBehaviour
             }
             Destroy(collision.gameObject);
         }
-        if (collision.gameObject.tag == "Exit")
+        if (collision.gameObject.tag == "Lv2")
         {
-            currLvl++;
+            SceneManager.LoadScene(1);
+        }
+        else if (collision.gameObject.tag == "Lv3")
+        {
+            SceneManager.LoadScene(2);
+        }
+        if (collision.gameObject.tag == "Boss")
+        {
+            if (Diff == 1)
+            {
+                curEncounter = encounters[27];
+                encounterNum = 27;
+                fightCanv.enabled = true;
+                FindObjectOfType<FightScript>().loadEncounter();
+                FindObjectOfType<FightScript>().fightingBoss();
+            }
+            else if (Diff == 2)
+            {
+                curEncounter = encounters[28];
+                encounterNum = 27;
+                fightCanv.enabled = true;
+                FindObjectOfType<FightScript>().loadEncounter();
+                FindObjectOfType<FightScript>().fightingBoss();
+            }
+            else if (Diff == 3)
+            {
+                curEncounter = encounters[29];
+                encounterNum = 27;
+                fightCanv.enabled = true;
+                FindObjectOfType<FightScript>().loadEncounter();
+                FindObjectOfType<FightScript>().fightingBoss();
+            }
+            else
+            {
+                curEncounter = encounters[29];
+                encounterNum = 27;
+                fightCanv.enabled = true;
+                FindObjectOfType<FightScript>().loadEncounter();
+                FindObjectOfType<FightScript>().fightingBoss();
+            }
         }
     }
 }
