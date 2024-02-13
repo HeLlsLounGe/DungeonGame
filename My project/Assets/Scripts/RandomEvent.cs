@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class RandomEvent : MonoBehaviour
 {
     [SerializeField] public List <EncounterCont> encounters;
-    [SerializeField] public float currLvl = 3;
+    [SerializeField] public int currLvl = 3;
     [SerializeField] public float Diff = 1f;
     [SerializeField] Canvas fightCanv;
     public EncounterCont curEncounter;

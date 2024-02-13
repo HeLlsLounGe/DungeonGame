@@ -9,17 +9,17 @@ public class Options : MonoBehaviour
     public void DiffEasy()
     {
         Camera.main.GetComponent<AudioSource>().PlayOneShot(click);
-        FindObjectOfType<RandomEvent>().Diff = 1;
+        FindObjectOfType<GameController>().DifficultyE();
     }
     public void DiffMed()
     {
         Camera.main.GetComponent<AudioSource>().PlayOneShot(click);
-        FindObjectOfType<RandomEvent>().Diff = 2;
+        FindObjectOfType<GameController>().DifficultyM();
     }
     public void DiffHard()
     {
         Camera.main.GetComponent<AudioSource>().PlayOneShot(click);
-        FindObjectOfType<RandomEvent>().Diff = 3;
+        FindObjectOfType<GameController>().DifficultyH();
     }
     public void Back()
     {
