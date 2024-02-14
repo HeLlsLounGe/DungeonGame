@@ -8,17 +8,14 @@ public class Options : MonoBehaviour
     [SerializeField] AudioClip click;
     public void DiffEasy()
     {
-        Camera.main.GetComponent<AudioSource>().PlayOneShot(click);
         FindObjectOfType<GameController>().DifficultyE();
     }
     public void DiffMed()
     {
-        Camera.main.GetComponent<AudioSource>().PlayOneShot(click);
         FindObjectOfType<GameController>().DifficultyM();
     }
     public void DiffHard()
     {
-        Camera.main.GetComponent<AudioSource>().PlayOneShot(click);
         FindObjectOfType<GameController>().DifficultyH();
     }
     public void Back()
