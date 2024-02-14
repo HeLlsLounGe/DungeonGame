@@ -16,7 +16,7 @@ MonoBehaviour:
   rockChance: 0
   paperChance: 20
   scissorsChance: 80
-  atkChance: 75
+  atkChance: 85
   gold: 1
   enemy: {fileID: -919175914, guid: 58f070a52c005b144a3cbdb062f44976, type: 3}
   enemyAnim: {fileID: 9100000, guid: c418340e0b4cbea4290dd279f41da3a3, type: 2}

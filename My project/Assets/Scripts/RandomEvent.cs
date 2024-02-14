@@ -13,6 +13,8 @@ public class RandomEvent : MonoBehaviour
     public int encounterNum;
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Diff = FindObjectOfType<GameController>().diff;
+
         if (collision.gameObject.tag == "Trigger")
         {
             int i = Random.Range(0, 100);
@@ -20,7 +22,7 @@ public class RandomEvent : MonoBehaviour
             {
                 if (Diff == 1)
                 {
-                    if (i >= 75)
+                    if (i <= 100)
                     {
                         if (currLvl == 1)
                         {
@@ -51,7 +53,7 @@ public class RandomEvent : MonoBehaviour
                 }
                 else if (Diff == 2)
                 {
-                    if (i >= 90)
+                    if (i <= 100)
                     {
                         if (currLvl == 1)
                         {
@@ -82,7 +84,7 @@ public class RandomEvent : MonoBehaviour
                 }
                 else if (Diff == 3)
                 {
-                    if (i >= 100)
+                    if (i <= 100)
                     {
                         if (currLvl == 1)
                         {

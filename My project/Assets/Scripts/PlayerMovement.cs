@@ -44,7 +44,24 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
-
+        moveAllow = FindObjectOfType<FightScript>().moveEnabled;
+        mobileUI = FindObjectOfType<GameController>().mobileOn;
+        if (mobileUI)
+        {
+            if (moveAllow)
+            {
+                mobileCanvas.enabled = true;
+                Debug.Log("moveEnabled");
+            }
+            else if (!moveAllow)
+            {
+                mobileCanvas.enabled = false;
+            }
+        }
+        else if (!mobileUI)
+        {
+            mobileCanvas.enabled = false;
+        }
         if (!mobileUI && moveAllow && !paused)
         {
             if (Vector3.Distance(transform.position, movePoint.position) <= .1f)
@@ -81,26 +98,10 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
-
-        moveAllow = FindObjectOfType<FightScript>().moveEnabled;
-        if (mobileUI)
-        {
-            if (moveAllow)
-            {
-                mobileCanvas.enabled = true;
-                Debug.Log("moveEnabled");
-            }
-            else if (!moveAllow)
-            {
-                mobileCanvas.enabled = false;
-            }
-        }
-
         if (Input.GetKeyDown("escape"))
         {
             Pause();
         }
-
         if (moving)
         {
             timer += Time.deltaTime;

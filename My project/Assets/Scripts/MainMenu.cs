@@ -16,6 +16,11 @@ public class MainMenu : MonoBehaviour
         opt.enabled = true;
         optAnim.enabled = true;
     }
+    public void OptExit()
+    {
+        opt.enabled = false;
+        optAnim.enabled = false;
+    }
     public void Back()
     {
         opt.enabled = false;

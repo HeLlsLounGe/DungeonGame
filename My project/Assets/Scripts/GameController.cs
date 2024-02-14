@@ -5,9 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField] float diff = 1;
-    [SerializeField] bool mobileOn = false;
-    public int currentLevel;
+    [SerializeField] public float diff = 1;
+    [SerializeField] public bool mobileOn = false;
     void Awake()
     {
         int numGameSessions = FindObjectsOfType<GameController>().Length;
@@ -22,7 +21,6 @@ public class GameController : MonoBehaviour
     private void Update()
     {
         Debug.Log(diff);
-        currentLevel = FindObjectOfType<RandomEvent>().currLvl;
     }
     public void DifficultyE()
     {
@@ -36,9 +34,12 @@ public class GameController : MonoBehaviour
     {
         diff = 3;
     }
-
-    public void PlayerRetry()
+    public void MobileOn()
     {
-        SceneManager.LoadScene(currentLevel);
+        mobileOn = true;
+    }
+    public void MobileOff()
+    {
+        mobileOn = false;
     }
 }
