@@ -10,8 +10,9 @@ public class MainMenu : MonoBehaviour
     [SerializeField] AudioClip click;
     public void Play()
     {
-        SceneManager.LoadScene(0);
         Camera.main.GetComponent<AudioSource>().PlayOneShot(click);
+        Time.timeScale = 1;
+        SceneManager.LoadScene(1);
     }
     public void Options()
     {

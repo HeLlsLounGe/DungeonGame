@@ -112,17 +112,47 @@ public class RandomEvent : MonoBehaviour
                             FindObjectOfType<FightScript>().loadEncounter();
                         }
                     }
+                }else
+                {
+                    if (i <= 100)
+                    {
+                        if (currLvl == 1)
+                        {
+                            int r = Random.Range(18, 21);
+                            curEncounter = encounters[r];
+                            encounterNum = r;
+                            Debug.Log(r);
+                            fightCanv.enabled = true;
+                            FindObjectOfType<FightScript>().loadEncounter();
+                        }
+                        else if (currLvl == 2)
+                        {
+                            int p = Random.Range(21, 24);
+                            curEncounter = encounters[p];
+                            encounterNum = p;
+                            fightCanv.enabled = true;
+                            FindObjectOfType<FightScript>().loadEncounter();
+                        }
+                        else if (currLvl == 3)
+                        {
+                            int s = Random.Range(24, 27);
+                            curEncounter = encounters[s];
+                            encounterNum = s;
+                            fightCanv.enabled = true;
+                            FindObjectOfType<FightScript>().loadEncounter();
+                        }
+                    }
                 }
             }
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "Lv2")
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(4);
         }
         else if (collision.gameObject.tag == "Lv3")
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(6);
         }
         if (collision.gameObject.tag == "Boss")
         {

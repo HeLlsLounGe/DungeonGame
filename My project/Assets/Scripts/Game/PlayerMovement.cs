@@ -181,6 +181,7 @@ public class PlayerMovement : MonoBehaviour
     public void Quit()
     {
         Camera.main.GetComponent<AudioSource>().PlayOneShot(click);
+        Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
     }
 }
