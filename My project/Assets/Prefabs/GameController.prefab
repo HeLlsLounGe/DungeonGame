@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7292594064766238556}
   - component: {fileID: 8558108039179933158}
+  - component: {fileID: 4190583654348321506}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -46,3 +47,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diff: 1
   mobileOn: 0
+  click: {fileID: 0}
+--- !u!81 &4190583654348321506
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7134412411642406009}
+  m_Enabled: 1

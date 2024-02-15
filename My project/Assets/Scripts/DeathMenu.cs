@@ -8,7 +8,7 @@ public class DeathMenu : MonoBehaviour
     [SerializeField] AudioClip click;
     public void Retry()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
         Camera.main.GetComponent<AudioSource>().PlayOneShot(click);
     }
     public void Quit()
