@@ -57,7 +57,7 @@ public class FightScript : MonoBehaviour
                 counter++;
                 if (bossFight)
                 {
-                    SceneManager.LoadScene("Win");
+                    SceneManager.LoadScene("BossWin");
                 }else
                 {
                     Camera.main.GetComponent<AudioSource>().PlayOneShot(enemyDeath);
