@@ -23,4 +23,12 @@ public class Options : MonoBehaviour
         Camera.main.GetComponent<AudioSource>().PlayOneShot(click);
         Opt.enabled = false;
     }
+    public void MobileOn()
+    {
+        FindObjectOfType<GameController>().MobileOn();
+    }
+    public void MobileOff()
+    {
+        FindObjectOfType<GameController>().MobileOff();
+    }
 }

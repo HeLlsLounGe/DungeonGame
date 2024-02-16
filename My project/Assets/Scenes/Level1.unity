@@ -180,6 +180,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 832414640}
+    - target: {fileID: 955257909148483512, guid: d3e2423f52448ad45a87e91c9aaa9abc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1362816690598499197, guid: d3e2423f52448ad45a87e91c9aaa9abc, type: 3}
       propertyPath: m_Camera
       value: 
@@ -215,6 +219,10 @@ PrefabInstance:
     - target: {fileID: 2595127072358033665, guid: d3e2423f52448ad45a87e91c9aaa9abc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: QuitButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2732552031824561715, guid: d3e2423f52448ad45a87e91c9aaa9abc, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2922227495420731174, guid: d3e2423f52448ad45a87e91c9aaa9abc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -342,6 +350,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7463683507937134188, guid: d3e2423f52448ad45a87e91c9aaa9abc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623602153688379004, guid: d3e2423f52448ad45a87e91c9aaa9abc, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8425613157145133438, guid: d3e2423f52448ad45a87e91c9aaa9abc, type: 3}
@@ -11767,8 +11779,12 @@ PrefabInstance:
       value: Player 1
       objectReference: {fileID: 0}
     - target: {fileID: 4640417592959549250, guid: 755123c73eb7eb64ba1f779c0ef2f313, type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.size
-      value: 5
+      propertyPath: m_ApplyToSortingLayers.Array.data[2]
+      value: -601999683
+      objectReference: {fileID: 0}
+    - target: {fileID: 4640417592959549250, guid: 755123c73eb7eb64ba1f779c0ef2f313, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[3]
+      value: -601999683
       objectReference: {fileID: 0}
     - target: {fileID: 4640417592959549250, guid: 755123c73eb7eb64ba1f779c0ef2f313, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.data[4]
